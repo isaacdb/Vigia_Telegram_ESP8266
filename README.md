@@ -20,8 +20,8 @@
 ## 💻 Sobre o projeto
 <p>Esse projeto entra no tema de IOT e SmartHome, tornaremos nosso ambiante particular mais seguro e confortável,</p>
 <p>vamos utilizar a placa WemosD1 para criar um assistente virtual que cuidara de nossa casa, ele monitorará nosso ambiente</p>
-<p> e casa aja alguma movimentação,vamo receber em nosso celular uma mensagem de alerta.</p>
-<p>O ideal para o projeto seria utilizar um sensor de movimentação/presença, mas como não tenho um a disposição no momento, será utilizado um push button para replicar o sinal digital do sensor de presença, e tambem como bônus, um sensor de distância, que terá um peculiaridade ao modo de ser lido, ja que o sinal será análogico e não digital como o push button.</p>
+<p> e casa houver alguma movimentação,vamos receber em nosso smartphone uma mensagem de alerta.</p>
+<p>O ideal para o projeto seria utilizar um sensor de movimentação/presença, mas como não tenho um a disposição no momento, será utilizado um push button para replicar o sinal digital do sensor de presença, e também como bônus, um sensor de distância, que terá uma peculiaridade no modo de ser lido, já que o sinal será análogico e não digital como o push button.</p>
 
 ---
 ## Materiais Utilizados
@@ -52,22 +52,22 @@ As seguintes tecnologias foram usadas na construção do projeto:
 ---
 ## Como executar
 <h4>Pré requisitos</h4>
-<p>Com a IDE do <a href="https://www.arduino.cc/en/software">Arduino</a> devidamente instalada, será nescessário também a instalação de algumas bibliotecas para o projeto, <a href="https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/">ESP8266 p/ Arduino</a>, <a href="https://github.com/witnessmenow/Universal-Arduino-Telegram-Bot/archive/master.zip">Biblioteca Telegram</a> (adicione como biblioteca local), <a href="https://github.com/bblanchon/ArduinoJson">ArduinoJson</a> (Busque pelo gerenciador de bibliotecas)</p>
+<p>Com a IDE do <a href="https://www.arduino.cc/en/software">Arduino</a> devidamente instalada, será nescessário também a instalação de algumas bibliotecas para o projeto, <a href="https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/">ESP8266 p/ Arduino</a>, <a href="https://github.com/witnessmenow/Universal-Arduino-Telegram-Bot/archive/master.zip">Biblioteca Telegram</a> (adicione como biblioteca local), <a href="https://github.com/bblanchon/ArduinoJson">ArduinoJson</a> (busque pelo gerenciador de bibliotecas)</p>
 
-<p>Faça o download do projeto via <a href="https://github.com/isaacdb/Vigia_Telegram_ESP8266">GitHub/isaacdb</a></p>
+<p>Faça o download do código via <a href="https://github.com/isaacdb/Vigia_Telegram_ESP8266">GitHub/isaacdb</a></p>
 
 <p>Faça o download do APP <a href="https://play.google.com/store/apps/details?id=org.telegram.messenger&hl=pt_BR&gl=US">Telegram</a> em seu smartphone.</p>
 
 <h4>Circuito</h4>
-<p>Monte o prototipo seguindo o circuito a seguir.</p>
+<p>Monte o protótipo seguindo o circuito a seguir.</p>
 <p>Confira se as pinagens estão correspondentes as do código, e cheque se todos os jumpers estão bem conectados.</p>
 <img width="80%" alt="TinkerCad" title="#TinkerCad" src="https://github.com/isaacdb/Vigia_Telegram_ESP8266/blob/main/ScreenShots/circuitoVigia.PNG">
 <img width="80%" alt="CircuitoReal" title="#CircuitoReal" src="https://github.com/isaacdb/Vigia_Telegram_ESP8266/blob/main/ScreenShots/Circuitofisico.jpeg">
 
 <h4>Configurações</h4>
-<p>Em seu Telegram procure por BotFather, sera com este bot que vamos criar nosso próprio bot vigi. Inicie com "/start", em seguida "/newbot", defina um Nome e um username para seu bot, guarde o username, e o codigo TOKEN que você recebera, vai ser nescessario para a aplicação ter controle do bot a seguir.</p>
+<p>Em seu Telegram procure por BotFather, será com este bot que vamos criar nosso próprio bot vigia. Inicie com "/start", em seguida "/newbot", defina um Nome e um Username para seu bot, guarde o username, e o código TOKEN que você receberá, vai ser nescessário para a aplicação ter controle do bot a seguir.</p>
 <p>Será preciso ter em mãos o ID da sua conta no Telegram para o bot enviar os alertas. No Telegram pesquise pot IDBot, insira "/getid", você receberá a resposta com seu ID</p>
-<p>Abra a IDE com o codigo do projeto, e define as variáveis de conexão de Wifi</p>
+<p>Abra a IDE com o código do projeto, e define as variáveis de conexão de Wifi</p>
  <img width="80%" alt="wifi" title="#wifi" src="https://github.com/isaacdb/Vigia_Telegram_ESP8266/blob/main/ScreenShots/configwifi.PNG"> 
 <p>Defina a conexão com o bot, e o seu ID do Telegram para receber os alertas</p>
  <img width="80%" alt="configbot" title="#configbot" src="https://github.com/isaacdb/Vigia_Telegram_ESP8266/blob/main/ScreenShots/configbot.PNG"> 
@@ -79,14 +79,14 @@ As seguintes tecnologias foram usadas na construção do projeto:
 <p>Método chamado quando houver mudança de estado no pino, mais específicamente quando o pino for setado para LOW, definimos isso no parametro RISING</p>
  <img width="80%" alt="wifi" title="#wifi" src="https://github.com/isaacdb/Vigia_Telegram_ESP8266/blob/main/ScreenShots/MetodoInterruptDigital.PNG"> 
 
- <p>Já para utilizar o sensor de distância vamos utilizar uma abordagem diferente, por ser um sensor de sinal análogico, nao temos como utilizar a interrupção por mudança de estado, então vamos utilizar uma interrupção por tempo, um TIMER, não terá um desempenho como a interrupção digital por que estará sempre execução, mas com um TIMER podemos garantir que o sensor será sempre monitorado mesmo enquanto a aplicação estiver em alguma outra funcionalidade, e podemos definir um tempo específico entre as leituras, para não pesar tanto no processamento.</p>
+ <p>Já para utilizar o sensor de distância vamos utilizar uma abordagem diferente, por ser um sensor de sinal análogico, não temos como utilizar a interrupção por mudança de estado, então vamos utilizar uma interrupção por tempo, um TIMER, não terá um desempenho tão bom quanto a interrupção digital porque estará sempre execução, mas com um TIMER podemos garantir que o sensor será sempre monitorado mesmo enquanto a aplicação estiver em alguma outra funcionalidade, e podemos definir um tempo específico entre as leituras, para não pesar tanto no processamento.</p>
  <p>Inicia o Timer</p>
  <img width="80%" alt="wifi" title="#wifi" src="https://github.com/isaacdb/Vigia_Telegram_ESP8266/blob/main/ScreenShots/interruptTimer.PNG"> 
 <p>Método de configuração do timer, e método que será chamado sempre que houver batido o tempo de cada ciclo.</p>
  <img width="80%" alt="wifi" title="#wifi" src="https://github.com/isaacdb/Vigia_Telegram_ESP8266/blob/main/ScreenShots/MetodoInterruptTimer.PNG"> 
   
 <h4>Execução</h4>
-<p>Abra seu App Telegram, procure pelo username do bot criado, e inicie o via com /start</p>
+<p>Abra seu App Telegram, procure pelo Username do bot criado, e inicie o via com /start</p>
 <p>A partir desse momento, você possui um vigia em tempo integral do seu ambiante <s>desde que possua internet claro</s>.</p>
 <img width="40%" alt="Conectado" title="#Conectado" src="https://github.com/isaacdb/Vigia_Telegram_ESP8266/blob/main/ScreenShots/bot.jpeg"> 
 

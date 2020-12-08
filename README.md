@@ -93,7 +93,7 @@ As seguintes tecnologias foram usadas na construção do projeto:
  <a href="https://youtu.be/nb96Aw5H10o">Video</a>
 
 ## Considerações
-<p>Com esse pequeno protótipo em mãos, fica fácil imaginar várias maneiras de expandir esse projeto e criar outras funcionalidades para compor sua SmartHome, podemos implementar um sensor por cômodo, definir alertas distintos para cada sensor, adicionar sensores destintos, criar lógicas para o bot também receber mensagens e tomar algumas ações que facilitem nossa vida, as opções são inúmeras!</p>
+<p>Com esse pequeno protótipo em mãos, fica fácil imaginar várias maneiras de expandir esse projeto e criar outras funcionalidades para compor sua SmartHome, podemos implementar um sensor por cômodo, definir alertas distintos para cada sensor, adicionar sensores distintos, criar lógicas para o bot também receber mensagens e tomar algumas ações que facilitem nossa vida, as opções são inúmeras!</p>
 
 ---
 ### Autor

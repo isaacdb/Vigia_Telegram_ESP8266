@@ -18,9 +18,7 @@
 
 ---
 ## 💻 Sobre o projeto
-<p>Esse projeto entra no tema de IOT e SmartHome, tornaremos nosso ambiante particular mais seguro e confortável,</p>
-<p>vamos utilizar a placa WemosD1 para criar um assistente virtual que cuidara de nossa casa, ele monitorará nosso ambiente</p>
-<p> e casa houver alguma movimentação,vamos receber em nosso smartphone uma mensagem de alerta.</p>
+<p>Esse projeto entra no tema de IOT e SmartHome, tornaremos nosso ambiante particular mais seguro e confortável, vamos utilizar a placa WemosD1 para criar um assistente virtual que cuidara de nossa casa, ele monitorará nosso ambiente e caso houver alguma movimentação,vamos receber em nosso smartphone uma mensagem de alerta.</p>
 <p>O ideal para o projeto seria utilizar um sensor de movimentação/presença, mas como não tenho um a disposição no momento, será utilizado um push button para replicar o sinal digital do sensor de presença, e também como bônus, um sensor de distância, que terá uma peculiaridade no modo de ser lido, já que o sinal será análogico e não digital como o push button.</p>
 
 ---
